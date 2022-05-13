@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //bricks pt 1
 
 //Mode framework ==============================================================
@@ -36,15 +43,17 @@ color purple   = #841FD8;
 color lightGR  = #67F720;
 color white    = #F1FAEE;
 
-//Fonts and images ============================================================
+//Fonts and images and sound ==================================================
 PFont themeFont;
 PImage brickWall, fireball;
+Minim minim;
+AudioPlayer triumph, lose, bounce, scoring, bump, theme;
 
 //set up ======================================================================
 void setup() {
   //bricks set up ===================================================
   brickd = 40;
-  brickN = 100;
+  brickN = 90;
   brickX = new int[brickN];
   brickY = new int[brickN];
   alive = new boolean[brickN];
@@ -73,4 +82,14 @@ void setup() {
   //stat setup =======================================================
   score = 0;
   lives = 3;
+  
+  //sound stuff ======================================================
+  minim = new Minim(this);
+  triumph = minim.loadFile("win.mp3");
+  bounce = minim.loadFile("bounce.mp3");
+  scoring = minim.loadFile("goal.wav");
+  bump = minim.loadFile("bump.wav");
+  lose = minim.loadFile("gameover.wav");
+  theme = minim.loadFile("theme.mp3");
+  
 }

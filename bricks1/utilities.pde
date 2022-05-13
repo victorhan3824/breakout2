@@ -2,8 +2,8 @@
 void brickFormation() {
   int a = 0;
   while (a < brickN) {
-    brickX[a] = (a%20)*42 + 100;
-    brickY[a] = (a/20)*50 + 150; 
+    brickX[a] = (a%18)*44 + 128;
+    brickY[a] = (a/18)*50 + 150; 
     alive[a] = true;
     a = a + 1;
   }
@@ -22,9 +22,11 @@ void reset() {
   pd = 200;
   vx = 0;
   vy = 2;
-  //reset stat
+  //reset stat ==================================
   lives = 3;
   score = 0;
+  //sound reset =================================
+  theme.rewind();
 }
 
 //button short cuts ==================================================

@@ -4,6 +4,7 @@
 void intro() {
   strokeWeight(3);
   image(brickWall,0,0,1000,800);
+  theme.play();
   
   //logo
   if (frameCount % 10 == 0) writing("breakout",white,132,width/2,height/3);
@@ -18,6 +19,5 @@ void introClick() {
   //mode --> GAME
   if (mouseX > width/2-125 && mouseX < width/2+125 && mouseY > height*0.7-75 && mouseY < height*0.7+75) {
     mode = GAME;
-    reset();
   }
 }
