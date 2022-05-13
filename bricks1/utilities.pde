@@ -22,6 +22,9 @@ void reset() {
   pd = 200;
   vx = 0;
   vy = 2;
+  //reset stat
+  lives = 3;
+  score = 0;
 }
 
 //button short cuts ==================================================
@@ -34,9 +37,8 @@ void button(String function, float x, float y, float w, float h, int s) {
     stroke(black);
   }
   rect(x, y, w, h);
-  fill(black);
 
-  writing(function, black, s, x, y);
+  writing(function, white, s, x, y);
 }
 
 //making texts =======================================================

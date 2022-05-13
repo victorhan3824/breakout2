@@ -17,6 +17,8 @@ boolean[] alive;
 
 //non-game variables ==========================================================
 boolean akey, dkey;
+int score, lives;
+boolean win;
 
 //color pallette ==============================================================
 color black    = #001219;
@@ -36,7 +38,7 @@ color white    = #F1FAEE;
 
 //Fonts and images ============================================================
 PFont themeFont;
-PImage brickWall;
+PImage brickWall, fireball;
 
 //set up ======================================================================
 void setup() {
@@ -67,4 +69,8 @@ void setup() {
   //font and images set up ===========================================
   themeFont = createFont("font.ttf", 69);
   brickWall = loadImage("brick.jpg");
+  fireball = loadImage("fireball.png");
+  //stat setup =======================================================
+  score = 0;
+  lives = 3;
 }
