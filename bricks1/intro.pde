@@ -3,12 +3,16 @@
 
 void intro() {
   strokeWeight(3);
-  image(brickWall,0,0,1000,800);
   theme.play();
   
+  //background gif
+  image(gif[gifFrameNum],0,0,width,height);
+  if (frameCount % 5 == 0) gifFrameNum = gifFrameNum + 1;
+  if (gifFrameNum == gifFrameTotal) gifFrameNum = 0;
+  
   //logo
-  if (frameCount % 10 == 0) writing("breakout",white,132,width/2,height/3);
-  else writing("breakout",black,128,width/2,height/3);
+  writing("breakout",color((frameCount)*5%256),132,width/2,height/3);
+
   
   //mode --> GAME
   button("PLAY",width/2,height*0.7,200,125,40);

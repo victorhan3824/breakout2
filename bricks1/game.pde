@@ -1,4 +1,3 @@
-
 //graphic display and mouse control ============================================
 
 void game() {
@@ -28,7 +27,7 @@ void game() {
   bx = bx + vx;
   by = by + vy;
   //fire ball: destroy an entire row
-  if (score % 5 == 0 && score != 0 && score != 100) image(fireball, bx-bd, by-bd, 2*bd, 2*bd); //fireball
+  if (score % 5 == 0 && score != 0 && score != brickN) image(fireball, bx-bd, by-bd, 2*bd, 2*bd); //fireball
   //bouncing =============================================================
   if (dist(bx, by, px, py) < bd/2 + pd/2) { //ball bounce off paddle
     vx = (bx - px)/10;
@@ -93,8 +92,8 @@ void manageBrick(int i) {
   rect(brickX[i], brickY[i], brickd, 20); 
 
   if (dist(bx, by, brickX[i], brickY[i]) < bd/2 + brickd/2) { 
-    if (score % 5 == 0 && score != 0 && score != brickN && i%brickN/5 > 1 && i%brickN/5 < brickN/5 - 2) { //when it's fireball
-      for (int b = -2; b <= 2; b=b+1) {
+    if (score % 5 == 0 && score != 0 && score != brickN && i%brickN/5 > 0 && i%brickN/5 < brickN/5 - 1) { //when it's fireball
+      for (int b = -1; b <= 1; b=b+1) {
         if (alive[i+b] == true) {
           alive[i+b] = false;
           score = score + 1;

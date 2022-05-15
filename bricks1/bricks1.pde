@@ -26,6 +26,8 @@ boolean[] alive;
 boolean akey, dkey;
 int score, lives;
 boolean win;
+PImage[] gif;
+int gifFrameTotal, gifFrameNum;
 
 //color pallette ==============================================================
 color black    = #001219;
@@ -59,6 +61,15 @@ void setup() {
   alive = new boolean[brickN];
 
   brickFormation(); //look for this in utilities
+  //gif set up =======================================================
+  gifFrameTotal = 3;
+  gif = new PImage[gifFrameTotal];
+  int i = 0;
+  while (i < gifFrameTotal) {
+    gif[i] = loadImage("frame_"+i+"_delay-0.5s.gif");
+    i = i + 1;
+  }
+  print(gif);
 
   //general set up ===================================================
   size(1000, 800);
