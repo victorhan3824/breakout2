@@ -69,7 +69,6 @@ void setup() {
     gif[i] = loadImage("frame_"+i+"_delay-0.5s.gif");
     i = i + 1;
   }
-  print(gif);
 
   //general set up ===================================================
   size(1000, 800);
